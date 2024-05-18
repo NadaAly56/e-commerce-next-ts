@@ -3,9 +3,9 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "http",
-        hostname: "localhost",
-        port: "6060",
+        protocol: "https",
+        hostname: "e-commerce-api-2-y17k.onrender.com",
+        port: "",
         pathname: "/**",
       },
     ],

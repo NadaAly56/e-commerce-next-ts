@@ -1,4 +1,5 @@
-import Image from "next/image";import Link from "next/link";
+import Image from "next/image";
+import Link from "next/link";
 
 export default async function Category() {
   // const api = import.meta.env.VITE_API_BASE_URL

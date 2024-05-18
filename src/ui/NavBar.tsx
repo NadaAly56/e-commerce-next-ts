@@ -1,6 +1,7 @@
 "use client";
 import { Fragment, useState } from "react";
 import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
+import Link from "next/link";
 import {
   ArrowPathIcon,
   Bars3Icon,
@@ -20,7 +21,7 @@ import Logo from "./Logo";
 const products = [
   {
     name: "Analytics",
-    description: "Get a better understanding of your traffic",
+    description: "Get Link better understanding of your traffic",
     href: "#",
     icon: ChartPieIcon,
   },
@@ -32,7 +33,7 @@ const products = [
   },
   {
     name: "Security",
-    description: "Your customers’ data will be safe and secure",
+    description: "Your customers’ datLink will be safe and secure",
     href: "#",
     icon: FingerPrintIcon,
   },
@@ -68,10 +69,10 @@ export default function Example() {
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <a href="/" className="-m-1.5 p-1.5">
+          <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
             <Logo width={60} height={60} />
-          </a>
+          </Link>
         </div>
         <div className="flex lg:hidden">
           <button
@@ -84,9 +85,12 @@ export default function Example() {
           </button>
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
-          <a href="/" className="text-sm font-semibold leading-6 text-gray-900">
+          <Link
+            href="/"
+            className="text-sm font-semibold leading-6 text-gray-900"
+          >
             Home
-          </a>
+          </Link>
           <Popover className="relative">
             <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
               Shop
@@ -119,13 +123,13 @@ export default function Example() {
                         />
                       </div>
                       <div className="flex-auto">
-                        <a
+                        <Link
                           href={item.href}
                           className="block font-semibold text-gray-900"
                         >
                           {item.name}
                           <span className="absolute inset-0" />
-                        </a>
+                        </Link>
                         <p className="mt-1 text-gray-600">{item.description}</p>
                       </div>
                     </div>
@@ -133,7 +137,7 @@ export default function Example() {
                 </div>
                 <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
                   {callsToAction.map((item) => (
-                    <a
+                    <Link
                       key={item.name}
                       href={item.href}
                       className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
@@ -143,36 +147,39 @@ export default function Example() {
                         aria-hidden="true"
                       />
                       {item.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </Popover.Panel>
             </Transition>
           </Popover>
 
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <Link
+            href="#"
+            className="text-sm font-semibold leading-6 text-gray-900"
+          >
             About
-          </a>
-          <a
+          </Link>
+          <Link
             href="#contact"
             className="text-sm font-semibold leading-6 text-gray-900"
           >
             Contact
-          </a>
+          </Link>
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a
+          <Link
             href="/register"
             className="text-sm font-semibold leading-6 text-gray-900 me-9"
           >
             Sign up
-          </a>
-          <a
+          </Link>
+          <Link
             href="/login"
             className="text-sm font-semibold leading-6 text-gray-900"
           >
             Log in <span aria-hidden="true">&rarr;</span>
-          </a>
+          </Link>
         </div>
       </nav>
       <Dialog
@@ -183,10 +190,10 @@ export default function Example() {
         <div className="fixed inset-0 z-10" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <a href="/" className="-m-1.5 p-1.5">
+            <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <Logo />
-            </a>
+            </Link>
             <button
               type="button"
               className="-m-2.5 rounded-md p-2.5 text-gray-700"
@@ -199,12 +206,12 @@ export default function Example() {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
-                <a
+                <Link
                   href="/"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Home
-                </a>
+                </Link>
                 <Disclosure as="div" className="-mx-3">
                   {({ open }) => (
                     <>
@@ -234,32 +241,32 @@ export default function Example() {
                   )}
                 </Disclosure>
 
-                <a
+                <Link
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   About
-                </a>
-                <a
+                </Link>
+                <Link
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Contact
-                </a>
+                </Link>
               </div>
               <div className="py-6">
-                <a
+                <Link
                   href="/register"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Sign up
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/login"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Log in
-                </a>
+                </Link>
               </div>
             </div>
           </div>

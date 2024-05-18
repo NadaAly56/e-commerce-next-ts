@@ -1,9 +1,10 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from "next/image";import Link from "next/link";
 
 export default async function Category() {
   // const api = import.meta.env.VITE_API_BASE_URL
-  const res = await fetch("http://localhost:6060/categories");
+  const res = await fetch(
+    "https://e-commerce-api-2-y17k.onrender.com/categories"
+  );
   const categories = await res.json();
 
   return (
@@ -38,7 +39,7 @@ export default async function Category() {
                 {cat.categoryImg && (
                   <Image
                     className="cat-img h-80"
-                    src={`http://localhost:6060/uploads/${cat.categoryImg}`}
+                    src={`https://e-commerce-api-2-y17k.onrender.com/uploads/${cat.categoryImg}`}
                     alt="access"
                     width={300}
                     height="100"

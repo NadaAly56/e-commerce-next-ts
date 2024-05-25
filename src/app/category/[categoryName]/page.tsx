@@ -1,5 +1,4 @@
-import Breadcrumb from "@/ui/Breadcrumb";
-import Image from "next/image";
+import Breadcrumb from "@/app/_components/Breadcrumb";import Image from "next/image";
 import Link from "next/link";
 export default function CategoryItems({
   params,

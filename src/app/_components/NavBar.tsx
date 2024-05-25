@@ -17,6 +17,7 @@ import {
   PlayCircleIcon,
 } from "@heroicons/react/20/solid";
 import Logo from "./Logo";
+import Avatar from "./Avatar";
 
 const products = [
   {
@@ -59,7 +60,13 @@ function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Example() {
+export default function NavBar({
+  name,
+  image,
+}: {
+  name: string;
+  image: string;
+}) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -180,6 +187,7 @@ export default function Example() {
           >
             Log in <span aria-hidden="true">&rarr;</span>
           </Link>
+          <Avatar name={name} image={image} />
         </div>
       </nav>
       <Dialog

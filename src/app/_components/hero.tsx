@@ -1,10 +1,11 @@
+import Avatar from "./Avatar";
 export default function Hero() {
   return (
     <>
       <div className="hero bg-pink-100">
         <div className="text-center">
           <p className="text text-rose-700">New Arrivals</p>
-          <img className="m-auto" src="flower.avif" alt="flower"></img>
+          {/* <img className="m-auto" src="flower.avif" alt="flower"></img> */}
           <div className="flex items-center justify-center my-5">
             <img
               src="left-arrow.webp"

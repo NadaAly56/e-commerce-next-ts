@@ -1,9 +1,8 @@
-"use client";
-import { useState } from "react";
+"use client";import { useState } from "react";
 import { StarIcon } from "@heroicons/react/20/solid";
 import { RadioGroup } from "@headlessui/react";
 import Image from "next/image";
-import Breadcrumb from "@/ui/Breadcrumb";
+import Breadcrumb from "@/app/_components/Breadcrumb";
 
 const reviews = { href: "#", average: 4, totalCount: 117 };
 

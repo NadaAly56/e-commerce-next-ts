@@ -1,5 +1,4 @@
-"use client";
-import { useForm } from "react-hook-form";
+"use client";import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import axios from "axios";
@@ -50,7 +49,7 @@ function Register() {
         }
       );
       if (res) toast.success(res.data.msg || "Created");
-    } catch (error) {
+    } catch (error: any) {
       toast.error(error?.response?.data?.msg || "An error occurred");
     }
   };

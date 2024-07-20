@@ -1,8 +1,5 @@
-"use client";import { useState } from "react";
-
+"use client";
 export default function Login() {
-  const [counter, setCounter] = useState(1);
-  const [emails, setEmails] = useState<string[]>([""]);
   return (
     <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -21,25 +18,14 @@ export default function Login() {
               Email address
             </label>
             <div className="mt-2">
-              {Array.from({ length: counter }, (_, index) => {
-                return (
-                  <input
-                    key={index}
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={emails[index]}
-                    autoComplete="email"
-                    onChange={(el) => {
-                      const emailsArr: string[] = [...emails];
-                      emailsArr[index] = el.target.value;
-                      setEmails(emailsArr);
-                    }}
-                    required
-                    className="block w-full rounded-md border-0 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-pink-400 sm:text-sm sm:leading-6"
-                  />
-                );
-              })}
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autoComplete="email"
+                required
+                className="block w-full rounded-md border-0 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-pink-400 sm:text-sm sm:leading-6"
+              />
             </div>
           </div>
 
@@ -74,21 +60,10 @@ export default function Login() {
 
           <div>
             <button
-              type="button"
-              onClick={(el) => {
-                el.preventDefault();
-                setCounter((counter) => (counter += 1));
-                console.log(counter);
-              }}
-            >
-              add more emails
-            </button>
-            <button
               type="submit"
               className="flex w-full justify-center rounded-md bg-pink-200 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-pink-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink-500"
               onClick={(el) => {
                 el.preventDefault();
-                console.log(emails);
               }}
             >
               Sign in

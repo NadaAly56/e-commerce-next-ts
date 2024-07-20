@@ -1,5 +1,4 @@
-import NextAuth from "next-auth";
-import credentials from "next-auth/providers/credentials";
+import NextAuth from "next-auth";import Credentials from "next-auth/providers/credentials";
 import Google from "next-auth/providers/google";
 
 const authConfig = {
@@ -8,19 +7,19 @@ const authConfig = {
       clientId: process.env.AUTH_GOOGLE_ID,
       clientSecret: process.env.AUTH_GOOGLE_SECRET,
     }),
-    // Credential({
-    //   credentials: {
-    //     email: {},
-    //     password: {},
-    //   },
-    //   authorize: async (credentials) => {
-    //     let user = null;
-    //     // const match = await bcrypt.compare(credentials.password, user.password)
-    //     // if (!match || !user)
-    //     //   return res.json({ msg: "Email or Password is incorrect" });
-    //     return user;
-    //   },
-    // }),
+    Credentials({
+      credentials: {
+        email: { label: "email", type: "email" },
+        password: { label: "password", type: "password" },
+      },
+      authorize: async (credentials) => {
+        let user = null;
+        // const match = await bcrypt.compare(credentials.password, user.password)
+        // if (!match || !user)
+        //   return res.json({ msg: "Email or Password is incorrect" });
+        return user;
+      },
+    }),
   ],
 };
 export const {

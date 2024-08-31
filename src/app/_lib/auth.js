@@ -1,7 +1,11 @@
-import NextAuth from "next-auth";import Credentials from "next-auth/providers/credentials";
+import NextAuth from "next-auth";
+import Credentials from "next-auth/providers/credentials";
 import Google from "next-auth/providers/google";
 
 const authConfig = {
+  pages: {
+    signIn: "/login",
+  },
   providers: [
     Google({
       clientId: process.env.AUTH_GOOGLE_ID,

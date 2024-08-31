@@ -1,5 +1,5 @@
 import Link from "next/link";
-export default async function Avatar({
+export default function Avatar({
   name,
   image,
 }: {
@@ -9,8 +9,10 @@ export default async function Avatar({
   return (
     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
       <Link href="/profile">
-        <p>{name}</p>
-        <img src={image || ""} alt="user" width={50} height={50} />
+        <div className="flex flex-col items-center justify-center">
+          <img src={image || ""} alt="user" width={50} height={50} />
+          <p>{name}</p>
+        </div>
       </Link>
     </div>
   );

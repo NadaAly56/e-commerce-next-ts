@@ -1,5 +1,22 @@
 "use client";
+import { toast } from "react-toastify";
+import { signInWithCredintials, signInWithGoogle } from "./actions";
+
 export default function Login() {
+  async function onSubmitAction(formData: FormData) {
+    console.log({ formData: Object.fromEntries(formData) });
+
+    // signInWithGoogle()
+    try {
+      const res = await signInWithCredintials(formData);
+      console.log("res", res);
+
+      if (res.msg === "success") toast(res.msg);
+      else toast.error(res.msg);
+    } catch (error: any) {
+      toast.error(error.response.msg);
+    }
+  }
   return (
     <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -9,7 +26,7 @@ export default function Login() {
       </div>
 
       <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-        <form className="space-y-6" action="#" method="POST">
+        <form className="space-y-6" action={onSubmitAction}>
           <div>
             <label
               htmlFor="email"
@@ -62,15 +79,21 @@ export default function Login() {
             <button
               type="submit"
               className="flex w-full justify-center rounded-md bg-pink-200 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-pink-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink-500"
-              onClick={(el) => {
-                el.preventDefault();
-              }}
             >
               Sign in
             </button>
           </div>
         </form>
-
+        <br></br>
+        <p className="border-t-2 w-full text-center">OR</p>
+        <form action={signInWithGoogle}>
+          <button
+            type="submit"
+            className="font-semibold text-blue-600 hover:text-blue-500 w-full text-center"
+          >
+            Signin with Google
+          </button>
+        </form>
         <p className="mt-10 text-center text-sm text-gray-500">
           Not a member?
           <a

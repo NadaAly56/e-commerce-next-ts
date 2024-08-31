@@ -22,6 +22,7 @@ export default async function RootLayout({
         <NavBar
           name={session?.user?.name || ""}
           image={session?.user?.image || ""}
+          session={session}
         />
         {children}
         <Footer />

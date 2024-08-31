@@ -1,4 +1,5 @@
-"use client";import { useForm } from "react-hook-form";
+"use client";
+import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import axios from "axios";
@@ -40,11 +41,11 @@ function Register() {
     console.log(values);
     try {
       const res = await axios.post(
-        `http://localhost:3300/users/signUp`,
+        `http://localhost:6060/auth/signUp`,
         values,
         {
           headers: {
-            redirectLink: "http://localhost:3000/confirm/",
+            redirectLink: "http://localhost:3000/confirm-email/",
           },
         }
       );
